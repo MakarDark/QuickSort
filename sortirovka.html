@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sortirovka</title>
+	<meta charset="utf-8">
+</head>
+<body>
+<script type="text/javascript">
+	var v=prompt("Введите 1, если хотите случайный массив или введите 2, если хотите ввести массив самостоятельно");
+	function RandomSh(min=0, max=99) {
+           return Math.floor(Math.random() * (max - min)) + min;
+         }
+	switch(v){
+	  case "1":
+        var NumRan=RandomSh();
+		var massV1= [];
+		for(var i=0;i<=NumRan;i++){
+			massV1[i]=RandomSh();
+		}
+	  break;
+	  case "2":
+		 var Num=prompt("Введите сколько будет чисел в массиве");
+		 var massV2=[];
+		 for(var j=0;j<Num;j++){
+		 	massV2[j]=prompt("Введите элемент");
+		 }
+		 alert(massV2 + "Изначальный массив")
+		 function QuickSort(){
+		 	if(massV2.length == 0){
+		 		return [];
+		 	}
+		 	var massA2=[], massB2=[], o=massV2[0];
+		  	for(var i=1;i<=massV2.length;i++){
+		  		if(massV2[i]<o){
+		  			var p=massV2[i];
+		  			massA2.push(p);
+		  		}
+		  		else{
+		  			var p2=massV2[i];
+		  			massB2.push(p2);
+		  		}
+		  	}
+		  	
+		  	alert(massV2);
+
+		 }
+		 QuickSort();
+	  break;
+	  default:
+		alert("Вы ввели не верное число, перезапустите страницу");
+	}
+</script>
+</body>
+</html>
